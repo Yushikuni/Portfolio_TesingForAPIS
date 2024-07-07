@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# custom
+.vs/*
+obj/*
+*.esproj
+*.config
+CHANGELOG.md
+*.cjs
+
