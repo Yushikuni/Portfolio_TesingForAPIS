@@ -1,0 +1,59 @@
+.profile{
+    background-color: whitesmoke;
+    border-radius: 6px;
+    width: 100%;
+    display: inline-block;
+}
+.profile_name{
+    line-height: 30px;
+    padding: 10px;
+}
+.profile_name .name{
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: bold;
+}
+.profile_name .title{
+    font-size: 13px;
+    color: #777;
+}
+.profile_image{
+    margin-top: -10px;
+    -webkit-clip-path:polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+    clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+}
+.profile_image img{
+    width: 100%;
+}
+
+/* Info */
+.profile_information{
+    margin: -50px 1px 0px 5px;
+} 
+.profile_information .timeline .timeline_content{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.profile_information span{
+    font-weight: 700 !important;
+}
+.timelineItem_text{
+    font-size: 12px;
+    color: #787878;
+    font-weight: 400;
+}
+
+.profile_information a{
+    color: black;
+    text-decoration: none;
+}
+
+/* centralized download btn*/
+.profile .button_container{
+    width: 100;
+    justify-content: center;
+    margin-top: 15px;
+}
+.profile .button_container .dowload_cv{
+    text-decoration: none;
+}

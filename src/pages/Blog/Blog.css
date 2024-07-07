@@ -1,0 +1,60 @@
+.blog_main_content
+{
+    padding: var(--portfolio_main_content-padding)!important;
+    align-items: center;
+}
+.blog_main_content .nadpis
+{
+    color: red;
+}
+
+/*CARDS*/
+.customCard{
+    height: var(--portfolio_customCard-height)!important;
+    max-width: var(--portfolio_customCard-max-width)!important;
+    box-shadow: var(--portfolio_customCard-box-shadow)!important;
+    border-radius: var(--portfolio_customCard-border-radius)!important;
+    overflow: var(--portfolio_customCard-overflow)!important;
+    outline-width: var(--portfolio_customCard-outline-width)!important;
+    margin-top: var(--portfolio_customTabs_customTabs_item-margintop) !important;
+}
+.customCard_image{
+    height: var(--portfolio_customCard-image-height)!important;
+}
+.customCard_title{
+    font-weight:var(--portfolio_customCard-title-font-weight) !important;
+    color: var(--portfolio_customCard-title-color)!important;
+}
+.customCard_caption{
+    color: var(--portfolio_customCard-caption-color)!important;
+}
+/*DIALOG*/
+.projectDialog{
+    color:var( --portfolio_projectDialog-color);
+    background-color: var(--portfolio_customCard-caption-color);
+    background:var(--portfolio_projectDialog-transparent-background);
+}
+.projectDialog .projectDialog_image{
+    max-height: var(--portfolio_projectDialog_image-max-height)!important;
+    width: var(--portfolio_projectDialog_image-width)!important;
+    object-fit: var(--portfolio_projectDialog_image-object-fit)!important;
+    object-position: var(--portfolio_projectDialog_image-object-position)!important;
+}
+.projectDialog .projectDialog_description{
+    margin-top: var(--portfolio_projectDialog_description-margin-top)!important;
+}
+.projectDialog .projectDialog_actions{
+    justify-content: var(--portfolio_projectDialog_actions-justify-content)!important;
+    margin-bottom: var(--portfolio_projectDialog_actions-margin-bottom)!important;
+}
+.projectDialog .projectDialog_icon{
+    color: var(--portfolio_projectDialog_icon-color)!important;
+    margin:  var(--portfolio_projectDialog_icon-margin)!important;
+    cursor: var(--portfolio_projectDialog_icon-cursor)!important;
+}
+.projectDialog .projectDialog_icon:hover{
+    color: var(--main-color)!important;
+}
+.projectDialog .projectDialog_icon > .MuiSvgIcon-root{
+    font-size:var(--portfolio_projectDialog_icon-MuiSvgIcon-root-font-size)!important;
+}

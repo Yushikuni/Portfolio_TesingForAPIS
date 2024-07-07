@@ -1,0 +1,186 @@
+/* Main Colors fo all portfolio*/
+:root {
+    --main-color: #d81300; /*#ffc500; */
+
+    --header-backgound-color: white;
+    --header-link-color: darkgray;
+    --header-icons-color: black;
+    --header-home-icon-color: white;
+    --footer-backgound-color: #1e1e1e;
+    --footer-color-font: white;
+    --footer-copyright-color: #9c9c9c;
+    --timeline-dot-header-color: white /*black*/;
+    --timeline-dot-remainig-item-color: black;
+    --timeline-connection-root-backgroundcolor: gray;
+    --timeline-header-dot-color: white /*black*/;
+    --custom-button-background-color: var(--main-color);
+    --custom-button-icon-container-color: black;
+    --custom-button-icon-container-background-color: #fff;
+    --custom-button-text-color: white /*black*/;
+    --main-content-background-color: white;
+    --main-content-radius: 6px;
+    --main-content-min-height: 100vh;
+    --main-content-section-title-padding: 0 3px;
+    --main-content-section-title-position: relative;
+    --main-content-section-title-display: inline-block;
+    --main-content-section-title-text-font-size: 18px;
+    --main-content-section-title-text-font-weight: 600;
+    --main-content-section-title-text-position: relative;
+    --main-content-section-title-text-margin: 0;
+    --main-content-section-title-span-position: absolute;
+    --main-content-section-title-span-height: 7px;
+    --main-content-section-title-span-width: 100%;
+    --main-content-section-title-span-bottom: 0;
+    --main-content-section-title-span-opacity: 0.4;
+    --main-content-section-title-span-left: 0;
+    --main-content-section-title-span-background-color: var(--main-color);
+    --section-padding: 6px;
+    --portfolio_main_content-padding: 25px !important;
+    --portfolio_customTabs_customTabs_item-padding: 0px !important;
+    --portfolio_customTabs_customTabs_item-min-width: 0px !important;
+    --portfolio_customTabs_customTabs_item-margin-right: 20px !important;
+    --portfolio_customTabs_customTabs_item-text-transform: inherit !important;
+    --portfolio_customTabs_customTabs_item-font-size: 14px !important;
+    --portfolio_customTabs_customTabs_item-font-width: 400 !important;
+    --portfolio_customTabs_customTabs_item-outline-width: 0px !important;
+    --portfolio_customTabs_customTabs_item-color: var(--main-color) !important;
+    --portfolio_customCard-height: 100%;
+    --portfolio_customCard-max-width: 400px;
+    --portfolio_customCard-box-shadow: 0 0 48px 0 rgba(4,6,4,0.08) !important;
+    --portfolio_customCard-border-radius: 5px;
+    --portfolio_customCard-overflow: hidden;
+    --portfolio_customCard-outline-width: 0px !important;
+    --portfolio_customCard-image-height: 140px;
+    --portfolio_customCard-title-font-weight: 600 !important;
+    --portfolio_customCard-title-color: black;
+    --portfolio_customCard-caption-color: gray;
+    --portfolio_projectDialog_image-max-height: 300px;
+    --portfolio_projectDialog_image-width: 100%;
+    --portfolio_projectDialog_image-object-fit: cover;
+    --portfolio_projectDialog_image-object-position: center center;
+    --portfolio_projectDialog_description-margin-top: 10px !important;
+    --portfolio_projectDialog_actions-justify-content: center !important;
+    --portfolio_projectDialog_actions-margin-bottom: 10px;
+    --portfolio_projectDialog_icon-color: darkslategrey;
+    --portfolio_projectDialog_icon-margin: 0px 12px;
+    --portfolio_projectDialog_icon-cursor: pointer;
+    --portfolio_projectDialog_icon-MuiSvgIcon-root-font-size: 30px !important;
+    --resume_main_resume_div-padding: 25px !important;
+    --resume_aboutme_text-color: gray !important;
+    --resume_aboutme_text-font: small !important;
+    --resume_aboutme_text-line-height: 22px !important;
+    --resume_aboutme_text-white-space: pre-line !important;
+    --resume_timeline_title-font-size: 16px !important;
+    --resume_timeline_title-font-weight: 500 !important;
+    --resume_timeline_title-white-space: pre-line;
+    --resume_timeline_date-color: darkgray;
+    --resume_timeline_description-color: gray !important;
+    --resume_timeline_description-font-size: small !important;
+    --resume_timeline_description-margin-top: 6px !important;
+    --resume_service-height: 100%;
+    --resume_service-text-align: center;
+    --resume_service_title-font-size: 18px !important;
+    --resume_service_title-font-weight: 500 !important;
+    --resume_service_title-line-height: 25px !important;
+    --resume_service_title-text-align: center;
+    --resume_service_description-color: #989898;
+    --resume_service_description-margin-right: 5px;
+    --resume_service_description-text-align: center;
+    --resume_service_icon-MuiSvgIcon-root-font-size: 100%;
+    --resume_service_icon-MuiSvgIcon-root-line-height: 25px !important;
+    --resume_service_icon-MuiSvgIcon-root-margin-left: 0;
+    --resume_service_icon-MuiSvgIcon-root-margin-bottom: 25px !important;
+    --resume_service_icon-MuiSvgIcon-root-color: darkgrey;
+    --resume_service_icon-MuiSvgIcon-root-vertical-align: middle;
+    --resume_skill-border-radius: 8px;
+    --resume_skill-padding: 20px;
+    --resume_skill-box-shadow: 0px 0px 48px 0px rgba(4, 6, 4, 0,08) !important;
+    --resume_skill-min-height: 186px;
+    --resume_skill-height: 100%;
+    --resume_skill_title-font-size: 18px !important;
+    --resume_skill_title-font-weight: 500 !important;
+    --resume_skill_title-line-height: 35px !important;
+    --resume_skill_description-display: flex;
+    --resume_skill_description-align-items: center;
+    --resume_skill_description-color: #989898 !important;
+    --resume_skill_description-font-weight: 400 !important;
+    --resume_skill_description-line-height: 18px !important;
+    --resume_skill_description_timeline_dot-padding: 2px !important;
+    --resume_skill_description_timeline_dot-margin-right: 5px !important;
+}
+
+/*  START magring & paddings*/
+.top_60 {
+    margin-top: 60px !important;
+}
+
+.top30 {
+    margin-top: 30px !important;
+}
+
+.mb_20 {
+    margin-bottom: 20px !important;
+}
+
+.mb_30 {
+    margin-bottom: 30px !important;
+}
+
+.p_30 {
+    padding: 30px !important;
+}
+
+.p_50 {
+    padding: 50px !important;
+}
+
+.pb_45 {
+    padding-bottom: 45px !important;
+}
+
+@media(max-width:991px) {
+    .top_60 {
+        margin-top: 30px !important;
+    }
+}
+/* Shadows and main content */
+.container_shadow {
+    box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.13);
+}
+
+.main-content {
+    background-color: var(--main-content-background-color);
+    border-radius: var(--main-content-radius);
+    -moz-border-radius: var(--main-content-radius);
+    -webkit-border-radius: var(--main-content-radius);
+    margin-bottom: var(--main-content-margin-bottom);
+}
+
+.section {
+    padding: var(--section-padding);
+}
+
+.section_title {
+    position: var(--main-content-section-title-position);
+    display: var(--main-content-section-title-display);
+    padding: var(--main-content-section-title-padding);
+}
+
+    .section_title .section_title_text {
+        font-size: var(--main-content-section-title-text-font-size);
+        font-weight: var(--main-content-section-title-text-font-weight);
+        position: var(--main-content-section-title-text-position);
+        margin: var(--main-content-section-title-text-margin);
+    }
+
+    .section_title span {
+        position: var(--main-content-section-title-span-position);
+        height: var(--main-content-section-title-span-height);
+        width: var(--main-content-section-title-span-width);
+        bottom: var(--main-content-section-title-span-bottom);
+        opacity: var(--main-content-section-title-span-opacity);
+        left: var(--main-content-section-title-span-left);
+        background-color: var(--main-content-section-title-span-background-color);
+    }

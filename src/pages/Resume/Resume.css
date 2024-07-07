@@ -1,0 +1,82 @@
+/*Main div for all texts*/
+.main_resume_div{
+   padding: var(--resume_main_resume_div-padding);
+}
+
+/*About me section*/
+.aboutme_text{
+    color: var(--resume_aboutme_text-color);
+    font: var(--resume_aboutme_text-font);
+    line-height: var(--resume_aboutme_text-line-height);
+    white-space: var(--resume_aboutme_text-white-space);
+}
+
+/*Timeline section*/
+.resume_timeline .timeline_content .timeline_title{
+    font-size: var(--resume_timeline_title-font-size);
+    font-weight: var(--resume_timeline_title-font-weight);
+    white-space: var(--resume_timeline_title-white-space);
+}
+
+.resume_timeline .timeline_content .timeline_date{
+    color: var(--resume_timeline_date-color);
+}
+.resume_timeline .timeline_content .timeline_description{
+    color: var(--resume_timeline_description-color);
+    font-size: var(--resume_timeline_description-font-size);
+    margin-top: var(--resume_timeline_description-margin-top);
+}
+/*END Timeline section*/
+/*SERVICES */
+.service{
+    height: var(--resume_service-height);
+    text-align: var(--resume_service-text-align);
+}
+.service .service_title{
+    font-size: var(--resume_service_title-font-size);
+    font-weight: var(--resume_service_title-font-weight);
+    line-height: var(--resume_service_title-line-height);
+    text-align: var(--resume_service_title-text-align);
+}
+.service .service_description{
+    color: var(--resume_service_description-color);
+    border-color: var(--main-color);
+    margin-right: var(--resume_service_description-margin-right);
+    text-align: var(--resume_service_description-text-align);
+}
+.service_icon > .MuiSvgIcon-root{
+    font-size: var(--resume_service_icon-MuiSvgIcon-root-font-size);
+    line-height: var(--resume_service_icon-MuiSvgIcon-root-line-height);
+    margin-left: var(--resume_service_icon-MuiSvgIcon-root-margin-left);
+    margin-bottom: var(--resume_service_icon-MuiSvgIcon-root-margin-bottom);
+    color:var(--resume_service_icon-MuiSvgIcon-root-color);
+    vertical-align: var(--resume_service_icon-MuiSvgIcon-root-vertical-align);
+    
+}
+/*END OF SERVICES*/
+/*SKILLS*/
+.skill{
+    border-radius:var(--resume_skill-border-radius);
+    padding: var(--resume_skill-padding);
+    box-shadow: var(--resume_skill-box-shadow);
+    min-height: var(--resume_skill-min-height);
+    height: var(--resume_skill-height);
+}
+.skill .skill_title{
+    font-size: var(--resume_skill_title-font-size);
+    font-weight: var(--resume_skill_title-font-weight);
+    line-height: var(--resume_skill_title-line-height);
+}
+.skill .skill_description{
+    display: var(--resume_skill_description-display);
+    align-items: var(--resume_skill_description-align-items);
+    color:var(--resume_skill_description-color);
+    font-weight: var(--resume_skill_description-font-weight);
+    line-height: var(--resume_skill_description-line-height);
+}
+.skill .skill_description .timeline_dot{
+    border-color: var(--main-color) !important;
+    padding: var(--resume_skill_description_timeline_dot-padding);
+    margin-right:var(--resume_skill_description_timeline_dot-margin-right);
+}
+/*END SKILLS*/
