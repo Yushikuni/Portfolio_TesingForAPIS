@@ -1,49 +1,81 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+//import { useState } from 'react'
+//import reactLogo from './assets/react.svg'
+//import viteLogo from '/vite.svg'
 import './App.css';
 
 //import { Container, Grid } from '@mui/material';
-//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import Profile from './components/Profile/Profile';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+//import Header from './components/Header/Header';
+//import Footer from './components/Footer/Footer';
 import Portfolio from './pages/Portfolio/Portfolio';
-import Resume from './pages/Resume/Resume';
+/*import Resume from './pages/Resume/Resume';*/
+
+//import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+
 
 function App() {
-    const [count, setCount] = useState(0)
+    //const [count, setCount] = useState(0)
     return (
-        <>
-            Tady ma byt:<br/>
-            container<br/>
-            grid<br/>
+        //<>
+        //    Tady ma byt:<br/>
+        //    container<br/>
+        //    grid<br/>
+
+        //    <Profile />
+
+        //    <Header />
+
+        //    <Resume />
+
+        //    <Portfolio />
+
+        //    <Footer />
+        //    <br /><br /><br /><br /><br /><br /><br />
+        //    TODO:<br />
+        //    Co vsechno ma issue s Vite + REACTJS?<br />
+        //    <br />1. HEADER!!
+        //    <br />2. UTF-8 ale to neva, web je v AJ :)
+        //    <br />3. Routerovani
+        //    <br />4.
+
+        //</>
+        <Router>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">
+                                Profile
+                            </Link>
+                            <Link to="/portfolio">
+                                Portfolio
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Switch>
+                    <Route path="/" component={Profile}/>
+                    <Route path="/portfolio" component={Portfolio}/>
+                    {/*Pridani dalsih stranek*/}
+                </Switch>
+            </div>
+        </Router>
+
         
-            <Profile />
-     
-            <Header />
-       
-            <Resume />
-
-            <Portfolio />
-           
-            <Footer />
-            <br /><br /><br /><br /><br /><br /><br />
-            TODO:<br />
-            Co vsechno ma issue s Vite + REACTJS?<br />
-            <br />1. HEADER!!
-            <br />2. UTF-8 ale to neva, web je v AJ :)
-            <br />3. Routerovani
-            <br />4.
-
-
-            
-        </>
-
+    //<Sidebar>
+    //    <Menu>
+    //        <SubMenu label="Charts">
+    //            <MenuItem> Pie charts </MenuItem>
+    //            <MenuItem> Line charts </MenuItem>
+    //        </SubMenu>
+    //        <MenuItem> Documentation </MenuItem>
+    //        <MenuItem> Calendar </MenuItem>
+    //    </Menu>
+    //</Sidebar>
     );
 }
-
 export default App;
 
 /*
