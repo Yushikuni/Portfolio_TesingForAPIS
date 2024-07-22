@@ -184,3 +184,37 @@
         left: var(--main-content-section-title-span-left);
         background-color: var(--main-content-section-title-span-background-color);
     }
+
+.side_navigation {
+    background-color: whitesmoke;
+    border-radius: 6px;
+    width: 100%;
+    display: inline-block;
+}
+    .side_navigation .content {
+        background-color: var(--main-content-background-color);
+        border-radius: var(--main-content-radius);
+        -moz-border-radius: var(--main-content-radius);
+        -webkit-border-radius: var(--main-content-radius);
+        margin-bottom: var(--main-content-margin-bottom);
+    }
+
+/* src/App.css */
+/*body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    display: flex;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    width: calc(100% - 200px);
+}
+
+.container_shadow {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}*/

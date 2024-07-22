@@ -1,162 +1,38 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
+import { Container, Grid } from "@mui/material";
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+
 import './App.css';
-
-import { Container, Grid } from '@mui/material';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
-import Profile from './components/Profile/Profile';
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import SideNav from './components/SideNav/SideNav';
+import Blog from './pages/Blog/Blog';
+import Contact from './pages/Contact/Contact';
+import NotFound from './pages/NotFound/NotFound';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Resume from './pages/Resume/Resume';
 
-//import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-
-
 function App() {
-    //const [count, setCount] = useState(0)
     return (
-        <Container className={'top_60'}>
-            <Grid container spacing={7}>
-                <Grid item xs={12} sm={12} md={4} lg={3}>
-                    <Profile />
+        <Router>
+            <Container className={'top_60'}>
+                <Grid container spacing={7}>
+                    <Grid item xs={12} sm={12} md={4} lg={3}>
+                        <SideNav />
+                    </Grid>
+                    <Grid item xs>
+                        <main className='main-content container_shadow'>
+                            <Routes>
+                                <Route path="/" element={<Resume />} />
+                                <Route path="/contact" element={<Contact />} />
+                                <Route path="/portfolio" element={<Portfolio />} />
+                                <Route path="/blog" element={<Blog />} />
+                                <Route path="*" element={<NotFound />} />
+                            </Routes>
+                        </main>
+                        <Footer />
+                    </Grid>
                 </Grid>
-                <Grid item xs>
-                    <Router>
-                        <Header />
-                        <div className='main-content container_shadow'>
-                            <Switch>
-                                <Route path="/portfolio"> <Portfolio /> </Route>
-                                <Route path='/'> <Resume /> </Route>
-                            </Switch>
-                        </div>
-                    </Router>
-                    <Footer />
-                </Grid>
-            </Grid>
-        </Container>        
-        
-           
-        //<Router>
-        //    <div>
-        //        <nav>
-        //            <ul>
-        //                <li>
-        //                    <Link to="/">
-        //                        Profile
-        //                    </Link>
-        //                    <Link to="/portfolio">
-        //                        Portfolio
-        //                    </Link>
-        //                </li>
-        //            </ul>
-        //        </nav>
-        //        <Switch>
-        //            <Route path="/" component={Profile}/>
-        //            <Route path="/portfolio" component={Portfolio}/>
-        //            {/*Pridani dalsih stranek*/}
-        //        </Switch>
-        //    </div>
-        //</Router>
-
-        
-    //<Sidebar>
-    //    <Menu>
-    //        <SubMenu label="Charts">
-    //            <MenuItem> Pie charts </MenuItem>
-    //            <MenuItem> Line charts </MenuItem>
-    //        </SubMenu>
-    //        <MenuItem> Documentation </MenuItem>
-    //        <MenuItem> Calendar </MenuItem>
-    //    </Menu>
-    //</Sidebar>
+            </Container>
+        </Router>
     );
 }
 export default App;
-
-/*
-
-
-
-*/
-
-/*
-
-<Grid item xs={12} sm={12} md={8} lg={9}>
-                        <Header />
-                        <div className='main-content container_shadow'>
-                            <Switch>
-                                <Route path='/portfolio'>
-                                    <Portfolio />
-                                </Route>
-                                <Route path='/'>
-                                    <Resume />
-                                </Route>
-                            </Switch>
-                        </div>
-                        <Footer />
-                    </Grid>
-
-
-function App() {
- const [count, setCount] = useState(0)
-    return (
-        <>
-      
-         <Container className={'top_60'}>
-            <Grid container spacing={7}>
-                <Grid item xs={12} sm={12} md={4} lg={3}>
-                    <Profile />
-                </Grid>
-                <Grid item xs>
-                    <Router>
-                        <Header />
-                        <div className='main-content container_shadow'>
-                            <Switch>
-                                <Route path="/portfolio"> <Portfolio /> </Route>
-                                <Route path='/'> <Resume /> </Route>
-                            </Switch>
-                        </div>
-                    </Router>
-                    <Footer />
-                </Grid>
-            </Grid>
-        </Container>        
-        </>
-
-    );
-}
-
-export default App;*/
-/*
-<div>
-                <a href="https://localhost" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-
-            </div>
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
-            </div>
-
-*/

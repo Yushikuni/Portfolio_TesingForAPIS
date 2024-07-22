@@ -5,5 +5,4 @@ function Header() {
     <p>Hello world!</p>
   );
 }
-
 export default Header;
