@@ -28,9 +28,8 @@ const Footer = ()=> {
                 <Typography className="footer_copyrights">
                     Designed and developed by © <a href="/" target='_blank'>Květuše Husáková</a>
                     <br/>
-                    Inspired by <a href="https://thetav.online/html/mat/default/index.html" target="_blank" rel="noreferrer" >Travonline</a>.<br/>
-                    Also thanks to <a href="https://www.youtube.com/channel/UCSEy8lBnjp42x5W1JPcca0w" target="_blank" rel="noreferrer">Salman Fazal</a> for tutorial
-                </Typography>
+                    Inspired by <a href="https://dev.epicgames.com/community/unreal-engine" target="_blank" rel="noreferrer">Dev.EpicGames.com</a>.<br/>
+                 </Typography>
             </div>
             {/*<div className="footer_right">
                 <Typography className="footer_copyrights">
