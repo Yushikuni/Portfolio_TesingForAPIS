@@ -19,7 +19,7 @@ function App() {
                         <SideNav />
                     </Grid>
                     <Grid item xs>
-                        <main className='main-content container_shadow'>
+                        <main className='main-content container_shadow top_60'>
                             <Routes>
                                 <Route path="/" element={<Resume />} />
                                 <Route path="/contact" element={<Contact />} />
