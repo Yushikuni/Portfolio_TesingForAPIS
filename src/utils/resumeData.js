@@ -8,12 +8,13 @@ import GameJamIcon from '@mui/icons-material/Gamepad';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import WebIcon from '@mui/icons-material/Link';
 
+/* LinkedIn API */
 export default{
     name:'Květuše Husáková',
-    title:'QA Tester & Stealth Programmer', {/* LinkedIn API */}
+    title:'QA Tester & Stealth Programmer', 
     email:'HusKveNimrah@gmail.com',
-
-    socials: {/* NaTvrdo Napsané */}
+/* NaTvrdo Napsané */
+    socials: 
     {
         LinkedIn:
         {
@@ -40,10 +41,10 @@ export default{
             icon: <YouTubeIcon/>,
         },
     },
-{/* GitHub API Yushikuni.readme.md */}
+/* GitHub API Yushikuni.readme.md */
     about:"My name is Kvetuse Husakova\nI have graduated SPŠT Třebíč (Information Technology) and I have also studied Telecommunication and Information Systems at BUT Brno.\n\nI am gamer, passionate reader and programmer.\n\n🔭 I am working on Toon Tanks! \n\n👨‍💻 I’m looking to collaborate with other content creators\n\n⚡ Fun fact: I love to draw and play on the bass guitar\n\n🍕 and I love pizza",
 
-    expiriences:[ {/* LinkedIn API */}
+    expiriences:[ /* LinkedIn API */
         {
             title:'QA Tester • UNICODE SYSTEMS',
             date:'01/2023 — today',
@@ -65,7 +66,7 @@ export default{
             description:'Teaching women programming in C# (beginner to intermediate)',
         },
     ],
-    educations:[ {/* LinkedIn API */}
+    educations:[ /* LinkedIn API */
         {
             title:'BUT Brno • Telecommunications and Information Systems • Sophomore (unfinished)',
             date:'2019 - 2021',
@@ -82,7 +83,7 @@ export default{
             description:'Basics and practical connection of electrical wiring in apartments',
         },
     ],
-    certificates:[ {/* LinkedIn API */}
+    certificates:[ /* LinkedIn API */
         {
             title:'GameDevHub: Unreal Engine 4',
             date:'3/2022',
@@ -99,7 +100,7 @@ export default{
             description:'Credential number: ude.my/UC-f7bd96-f661-4830-95b6-4507fa1a1720',
         },
     ],
-    skills:[ {/* LinkedIn API */}
+    skills:[ /* LinkedIn API */
         {
             title:'Front-end', 
             description: ['ReactJS', 'JavaScript', 'Bootstrap', 'Material UI', 'Mustache'],
@@ -133,7 +134,7 @@ export default{
             description:['pre-intermediate'],
         },
     ],
-    projects:[ {/* GITHUB API*/ }
+    projects:[ /* GITHUB API*/ 
         {
             tagmvp:'MVP',
             tag: 'Games',            
@@ -295,7 +296,7 @@ export default{
         },
     ],  
 
-    articles:[ {/* WORDPRESS API */}
+    articles:[ /* WORDPRESS API */
         {
             tag:'All',
             images:[
