@@ -5,7 +5,6 @@ import GithubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import GameJamIcon from '@mui/icons-material/Gamepad';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import WebIcon from '@mui/icons-material/Link';
 
 /* LinkedIn API */
