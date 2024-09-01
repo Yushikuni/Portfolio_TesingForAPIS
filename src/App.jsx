@@ -13,7 +13,7 @@ import Resume from './pages/Resume/Resume';
 function App() {
     return (
         <Router>
-            <Container className={'top_60'}>
+            <Container>
                 <Grid container spacing={7}>
                     <Grid item xs={12} sm={12} md={4} lg={3}>
                         <SideNav />
