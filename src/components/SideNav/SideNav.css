@@ -1,40 +1,68 @@
-/* src/components/SideNav/SideNav.css */
 .side-nav {
+    background-color: whitesmoke;
+    border-radius: 6px;
     width: 100%;
-    background-color: #333;
-    padding-top: 20px;
-    padding-bottom:20px;
-    text-align:center;
-    text-transform: uppercase;
+    display: inline-block;
 }
 
-    .side-nav ul {
-        list-style-type: none;
-        padding: 0;
+.side-nav_name {
+    line-height: 30px;
+    padding: 10px;
+}
+
+    .side-nav_name .name {
+        text-transform: uppercase;
+        font-size: 17px;
+        font-weight: bold;
     }
 
-        .side-nav ul li {
-            padding: 8px 16px;
-            text-align: center;
-        }
+    .side-nav_name .title {
+        font-size: 13px;
+        color: #777;
+    }
 
-            .side-nav ul li a {
-                color: white;
-                text-decoration: none;
-                display: block;
-            }
+.side-nav_image {
+    margin-top: -10px;
+    -webkit-clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+    clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+}
 
-                .side-nav ul li a:hover {
-                    background-color: #575757;
-                }
-.profile_image {
-    width: 100%;
-    
+    .side-nav_image img {
+        width: 100%;
+    }
+
+/* Info */
+.side-nav_information {
+    margin: -50px 1px 0px 5px;
 }
-.content {
-  width:auto;
- }
-.profile_social{
-    display:block;
-    width:auto;
+
+    .side-nav_information .timeline .timeline_content {
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    .side-nav_information span {
+        font-weight: 700 !important;
+    }
+
+.timelineItem_text {
+    font-size: 12px;
+    color: #787878;
+    font-weight: 400;
 }
+
+.side-nav_information a {
+    color: black;
+    text-decoration: none;
+}
+
+/* centralized download btn*/
+.side-nav .button_container {
+    width: 100;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+    .side-nav .button_container .dowload_cv {
+        text-decoration: none;
+    }

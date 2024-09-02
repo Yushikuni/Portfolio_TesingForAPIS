@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom';
 import './SideNav.css';
+import profilePic from '../../assets/images/profilePic.png';
 
 const SideNav = ()=> {
 
 
     return (
         <div className="side-nav">
-            <div className='profile_image'>
-                <br/><br/><br/><br/>
-                <h3> IMAGE SPACE </h3>
-                <br/><br/><br/><br/>
-            </div>
+            <figure className='profile_image'>
+                    <img src={profilePic} alt="" />
+            </figure>
             <div>
                 <nav className="content">
                     <ul>
