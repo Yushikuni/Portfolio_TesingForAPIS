@@ -9,24 +9,23 @@
 .side-nav_name {
     line-height: 30px;
     padding: 10px;
-    color:white;
+    color: white; /* Ujisti se, že text je bílý */
 }
 
     .side-nav_name .name {
         text-transform: uppercase;
         font-size: 17px;
         font-weight: bold;
-        color: white;
+        color: white; /* Bílá barva pro viditelnost */
     }
 
     .side-nav_name .title {
         font-size: 13px;
-        color: #777;
-        color: white;
+        color: white; /* Bílá barva pro viditelnost */
     }
 
 .profile_image img {
-    width: 75%; /* Nastav požadovanou šíøku obrázku */
+    width: 100%; /* Nastav požadovanou šíøku obrázku */
     height: auto; /* Zachová správný pomìr stran */
     border-radius: 50%; /* Pokud chceš kruhový obrázek */
     display: block;

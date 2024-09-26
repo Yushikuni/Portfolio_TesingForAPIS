@@ -11,11 +11,9 @@ const SideNav = ()=> {
             <figure className='profile_image'>
                     <img src={profilePic} alt="Profile Pic" />
             </figure>
-            <div className="name">
-                NAME:
-            </div>
-            <div className="title">
-                Title:
+            <div className="side-nav_name">
+                <p className="name">NAME:</p>
+                <p className="title">Title:</p>
             </div>
             <div>
                 <nav className="content">
