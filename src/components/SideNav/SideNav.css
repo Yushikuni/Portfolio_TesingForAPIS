@@ -1,35 +1,37 @@
 .side-nav {
-    background-color: whitesmoke;
-    border-radius: 6px;
+    background-color: black;
     width: 100%;
+    height:100vh;
     display: inline-block;
+    padding: 1vh 0;
 }
 
 .side-nav_name {
     line-height: 30px;
     padding: 10px;
+    color:white;
 }
 
     .side-nav_name .name {
         text-transform: uppercase;
         font-size: 17px;
         font-weight: bold;
+        color: white;
     }
 
     .side-nav_name .title {
         font-size: 13px;
         color: #777;
+        color: white;
     }
 
-.side-nav_image {
-    margin-top: -10px;
-    -webkit-clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
-    clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
+.profile_image img {
+    width: 75%; /* Nastav požadovanou šíøku obrázku */
+    height: auto; /* Zachová správný pomìr stran */
+    border-radius: 50%; /* Pokud chceš kruhový obrázek */
+    display: block;
+    margin: 0 auto; /* Centrovaní obrázku */
 }
-
-    .side-nav_image img {
-        width: 100%;
-    }
 
 /* Info */
 .side-nav_information {

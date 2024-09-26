@@ -7,9 +7,16 @@ const SideNav = ()=> {
 
     return (
         <div className="side-nav">
+            <br/>
             <figure className='profile_image'>
-                    <img src={profilePic} alt="" />
+                    <img src={profilePic} alt="Profile Pic" />
             </figure>
+            <div className="name">
+                NAME:
+            </div>
+            <div className="title">
+                Title:
+            </div>
             <div>
                 <nav className="content">
                     <ul>
