@@ -31,6 +31,7 @@
     border-radius: 50%; /* Pokud chceš kruhový obrázek */
     display: block;
     margin: 0 auto; /* Centrovaní obrázku */
+    padding:10px;
 }
 
 /* Info */
