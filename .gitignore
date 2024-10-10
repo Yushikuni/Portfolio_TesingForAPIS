@@ -30,4 +30,5 @@ obj/*
 *.config
 CHANGELOG.md
 *.cjs
+/src/data/*.json
 
