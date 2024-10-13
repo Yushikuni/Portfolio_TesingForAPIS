@@ -12,6 +12,9 @@ Currently, two official plugins are available:
 
 Only one thing needs to be finished: content. For content, I need to use APIs just because I am not lazy, but I need to update alone when an internet connection is available.
 
+#### How to build:
+REBuild: npm run dev
+
 
 #### APIs:
 - Github

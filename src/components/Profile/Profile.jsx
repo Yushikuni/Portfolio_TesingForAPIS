@@ -9,7 +9,7 @@ import GetAppIcon from '@mui/icons-material/GetApp';
 
 //import resumeData from './utils/resumeData';
 
-import resumeData from '../../__utils/resumeData';
+import resumeData from '../../utils/resumeData';
 
 import CustomButton from '../Button/Button';
 import profilePic from '../../assets/images/profilePic.png';

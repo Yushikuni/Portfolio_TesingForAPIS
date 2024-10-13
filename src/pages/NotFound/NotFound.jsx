@@ -1,5 +1,5 @@
 import React from 'react';
-import imgURL from '../../assets/images/bg-2.png';
+import imgURL from '../../assets/images/bg.png';
 
 function NotFound() {
     return (

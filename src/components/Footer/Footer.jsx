@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Typography } from '@mui/material';
 
-import resumeData from '../../__utils/resumeData';
+import resumeData from '../../utils/resumeData';
 
 import './Footer.css'
 
