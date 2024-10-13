@@ -13,7 +13,6 @@ const GetRepos = () => {
 
     return (
         <div>
-            <h2>My Repositories</h2>
             <ul>
                 {repos.map(repo => (
                     <li key={repo.id}>
