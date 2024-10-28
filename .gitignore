@@ -30,3 +30,4 @@ obj/*
 *.config
 CHANGELOG.md
 *.cjs
+*.env

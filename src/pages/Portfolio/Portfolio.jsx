@@ -6,11 +6,12 @@ import './Portfolio.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import useGithubRepos from '../../components/GetData/Games';
+import ItchioData from '../../components/GetData/PublishedGames';
 function Portfolio() {
     const [tabValue, setTabValue] = useState('mvp');
     const [projectDialog, setProjectDialog] = useState(false);
     const { repos, loading, error } = useGithubRepos('Yushikuni');  // Volání hooku
-    const tags = ['C++', 'C#', 'CSS', 'PHP', 'JavaScript'];
+
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error loading repositories.</p>;
@@ -61,21 +62,21 @@ function Portfolio() {
                                 ) : null}
                             </>
                         ))}
-                        {repos.slice(0, 6).map((repo) => (
+                        {ItchioData.map((game) => (
                             <>
                                 {tabValue === 'mvp' ? (
-                                    <Grid item xs={12} sm={6} md={4} key={repo.id}>
+                                    <Grid item xs={12} sm={6} md={4} key={game.id}>
                                         <Grow in timeout={1000}>
-                                            <Card className='customCard' onClick={() => setProjectDialog(repo)}>
+                                            <Card className='customCard' onClick={() => setProjectDialog(game)}>
                                                 <CardActionArea>
                                                     <CardMedia
                                                         className='customCard_image'
-                                                        image={'/path/to/default/image.jpg'}
-                                                        title={repo.name}
+                                                        image={game.cover_url || '/path/to/default/image.jpg'}
+                                                        title={game.title}
                                                     />
                                                     <CardContent>
-                                                        <Typography variant={'body2'} className='customCard_title'>{repo.name}</Typography>
-                                                        <Typography variant="caption" className='customCard_caption'>{repo.description}</Typography>
+                                                        <Typography variant={'body2'} className='customCard_title'>{game.title}</Typography>
+                                                        <Typography variant="caption" className='customCard_caption'>{game.short_text}</Typography>
                                                     </CardContent>
                                                 </CardActionArea>
                                             </Card>
