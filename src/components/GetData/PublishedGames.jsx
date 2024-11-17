@@ -1,11 +1,11 @@
-// ItchioData.jsx
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const ItchioData = () => {
+const useItchioGames = () => {
     const [games, setGames] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        // Funkce na naètení dat
         const fetchData = async () => {
             try {
                 const response = await fetch(`https://itch.io/api/1/${process.env.REACT_APP_ITCHIO_API_KEY}/my-games`);
@@ -13,29 +13,18 @@ const ItchioData = () => {
                     throw new Error('Failed to fetch data');
                 }
                 const data = await response.json();
-                setGames(data.games); // 'games' je název pole z itch.io API (zkontroluj jejich dokumentaci)
-            } catch (error) {
-                console.error('Error fetching data from itch.io API:', error);
+                setGames(data.games || []); // Defaultnì prázdné pole, pokud není `games`
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchData();
-    }, []);
+    }, []); // Závislosti prázdné -> zavolá se pouze jednou pøi montování
 
-    return (
-        <div>
-            <h2>My Games on Itch.io</h2>
-            <ul>
-                {games.map((game) => (
-                    <li key={game.id}>
-                        <h3>{game.title}</h3>
-                        <p>{game.short_text}</p>
-                        <a href={game.url} target="_blank" rel="noopener noreferrer">Play Now</a>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
+    return { games, loading, error }; // Vrátí stav
 };
 
-export default ItchioData;
+export default useItchioGames;

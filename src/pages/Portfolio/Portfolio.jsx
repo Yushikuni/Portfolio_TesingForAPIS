@@ -5,12 +5,15 @@ import Grow from '@mui/material/Grow';
 import './Portfolio.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import useGithubRepos from '../../components/GetData/Games';
-import ItchioData from '../../components/GetData/PublishedGames';
+import useGithubRepos from '../../components/GetData/Projects';
+import useItchioGames from '../../components/GetData/PublishedGames';
 function Portfolio() {
+    //const [itchioGames, setItchioGames] = useState([]);
     const [tabValue, setTabValue] = useState('mvp');
-    const [projectDialog, setProjectDialog] = useState(false);
+    const [projectDialog, setProjectDialog] = useState(null);
     const { repos, loading, error } = useGithubRepos('Yushikuni');  // Volání hooku
+    const { games: itchioGames, loading: loadingItchio, error: errorItchio } = useItchioGames(); // Pøíklad hooku
+
 
 
     if (loading) return <p>Loading...</p>;
@@ -39,6 +42,25 @@ function Portfolio() {
                 {/* Projekty */}
                 <Grid item xs={12}>
                     <Grid container spacing={3}>
+                        {tabValue === 'mvp' && itchioGames.map((game) => (
+                            <Grid item xs={12} sm={6} md={4} key={game.id}>
+                                <Grow in timeout={1000}>
+                                    <Card className='customCard' onClick={() => setProjectDialog(game)}>
+                                        <CardActionArea>
+                                            <CardMedia
+                                                className='customCard_image'
+                                                image={game.cover_url || '/path/to/default/image.jpg'}
+                                                title={game.title}
+                                            />
+                                            <CardContent>
+                                                <Typography variant={'body2'} className='customCard_title'>{game.title}</Typography>
+                                                <Typography variant="caption" className='customCard_caption'>{game.short_text}</Typography>
+                                            </CardContent>
+                                        </CardActionArea>
+                                    </Card>
+                                </Grow>
+                            </Grid>
+                        ))}
                         {repos.map((repo) => (
                             <>
                                 {tabValue === repo.language ? (
@@ -62,7 +84,7 @@ function Portfolio() {
                                 ) : null}
                             </>
                         ))}
-                        {ItchioData.map((game) => (
+                        {useItchioGames.map((game) => (
                             <>
                                 {tabValue === 'mvp' ? (
                                     <Grid item xs={12} sm={6} md={4} key={game.id}>
@@ -90,16 +112,20 @@ function Portfolio() {
             </Grid>
 
             {/* Dialogové okno s podrobnostmi o projektu */}
-            <Dialog open={!!projectDialog} onClose={() => setProjectDialog(false)} className='projectDialog' maxWidth="md">
-                <DialogTitle onClose={() => setProjectDialog(false)}>{projectDialog.name}</DialogTitle>
-                <DialogContent style={{ height: "80vh" }}>
-                    <Typography className='projectDialog_description'>{projectDialog.description}</Typography>
-                </DialogContent>
-                <DialogActions className='projectDialog_actions'>
-                    <a href={projectDialog.html_url} target='_blank' rel='noopener noreferrer' className='projectDialog_icon'>
-                        View on GitHub
-                    </a>
-                </DialogActions>
+            <Dialog open={!!projectDialog} onClose={() => setProjectDialog(null)} className='projectDialog' maxWidth="md">
+                {projectDialog && (
+                    <>
+                        <DialogTitle onClose={() => setProjectDialog(null)}>{projectDialog.name}</DialogTitle>
+                        <DialogContent style={{ height: "80vh" }}>
+                            <Typography className='projectDialog_description'>{projectDialog.description}</Typography>
+                        </DialogContent>
+                        <DialogActions className='projectDialog_actions'>
+                            <a href={projectDialog.html_url} target='_blank' rel='noopener noreferrer' className='projectDialog_icon'>
+                                View on GitHub
+                            </a>
+                        </DialogActions>
+                    </>
+                )}
             </Dialog>
         </div>
     );
