@@ -11,8 +11,8 @@ function Portfolio() {
     //const [itchioGames, setItchioGames] = useState([]);
     const [tabValue, setTabValue] = useState('mvp');
     const [projectDialog, setProjectDialog] = useState(null);
-    const { repos, loading, error } = useGithubRepos('Yushikuni');  // Volání hooku
-    const { games: itchioGames, loading: loadingItchio, error: errorItchio } = useItchioGames(); // Pøíklad hooku
+    const { repos, loading, error } = useGithubRepos('Yushikuni');  // Hook is called
+    const { games: itchioGames, loading: loadingItchio, error: errorItchio } = useItchioGames();
 
 
 
