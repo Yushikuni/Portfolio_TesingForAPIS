@@ -12,7 +12,7 @@ function Portfolio() {
     const [tabValue, setTabValue] = useState('mvp');
     const [projectDialog, setProjectDialog] = useState(null);
     const { repos, loading, error } = useGithubRepos('Yushikuni');  // Hook is called
-    const { games: itchioGames, loading: loadingItchio, error: errorItchio } = useItchioGames();
+    const [useItchioGames] = useState([]);
 
 
 
@@ -42,7 +42,7 @@ function Portfolio() {
                 {/* Projekty */}
                 <Grid item xs={12}>
                     <Grid container spacing={3}>
-                        {tabValue === 'mvp' && itchioGames.map((game) => (
+                        {tabValue === 'mvp' && useItchioGames.map((game) => (
                             <Grid item xs={12} sm={6} md={4} key={game.id}>
                                 <Grow in timeout={1000}>
                                     <Card className='customCard' onClick={() => setProjectDialog(game)}>
@@ -76,29 +76,6 @@ function Portfolio() {
                                                     <CardContent>
                                                         <Typography variant={'body2'} className='customCard_title'>{repo.name}</Typography>
                                                         <Typography variant="caption" className='customCard_caption'>{repo.description}</Typography>
-                                                    </CardContent>
-                                                </CardActionArea>
-                                            </Card>
-                                        </Grow>
-                                    </Grid>
-                                ) : null}
-                            </>
-                        ))}
-                        {useItchioGames.map((game) => (
-                            <>
-                                {tabValue === 'mvp' ? (
-                                    <Grid item xs={12} sm={6} md={4} key={game.id}>
-                                        <Grow in timeout={1000}>
-                                            <Card className='customCard' onClick={() => setProjectDialog(game)}>
-                                                <CardActionArea>
-                                                    <CardMedia
-                                                        className='customCard_image'
-                                                        image={game.cover_url || '/path/to/default/image.jpg'}
-                                                        title={game.title}
-                                                    />
-                                                    <CardContent>
-                                                        <Typography variant={'body2'} className='customCard_title'>{game.title}</Typography>
-                                                        <Typography variant="caption" className='customCard_caption'>{game.short_text}</Typography>
                                                     </CardContent>
                                                 </CardActionArea>
                                             </Card>
