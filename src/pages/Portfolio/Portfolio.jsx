@@ -12,12 +12,11 @@ function Portfolio() {
     const [tabValue, setTabValue] = useState('mvp');
     const [projectDialog, setProjectDialog] = useState(null);
     const { repos, loading, error } = useGithubRepos('Yushikuni');  // Hook is called
-    const [useItchioGames] = useState([]);
+    const { games, loading: gamesLoading, error: gamesError } = useItchioGames(); // Hook pro naètení her
 
 
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error loading repositories.</p>;
+    if (loading || gamesLoading) return <p>Loading...</p>;
+    if (error || gamesError) return <p>Error loading data.</p>;
 
     return (
         <div className='portfolio_main_content'>
@@ -42,7 +41,7 @@ function Portfolio() {
                 {/* Projekty */}
                 <Grid item xs={12}>
                     <Grid container spacing={3}>
-                        {tabValue === 'mvp' && useItchioGames.map((game) => (
+                        {tabValue === 'mvp' && games.map((game) => (
                             <Grid item xs={12} sm={6} md={4} key={game.id}>
                                 <Grow in timeout={1000}>
                                     <Card className='customCard' onClick={() => setProjectDialog(game)}>
