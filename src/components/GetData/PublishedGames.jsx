@@ -10,11 +10,13 @@ const useItchioGames = () => {
             try {
                 const response = await fetch(`https://itch.io/api/1/${process.env.REACT_APP_ITCHIO_API_KEY}/my-games`);
                 if (!response.ok) {
-                    throw new Error('Failed to fetch data');
+                    console.error('Response:', response); // Debug
+                    throw new Error(`Failed to fetch data: ${response.statusText}`);
                 }
                 const data = await response.json();
-                setGames(data.games || []); // Defaultnì prázdné pole, pokud není `games`
+                setGames(data.games || []);
             } catch (err) {
+                console.error('Error:', err); // Debug
                 setError(err.message);
             } finally {
                 setLoading(false);

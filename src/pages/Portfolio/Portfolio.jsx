@@ -8,11 +8,11 @@ import Tab from '@mui/material/Tab';
 import useGithubRepos from '../../components/GetData/Projects';
 import useItchioGames from '../../components/GetData/PublishedGames';
 function Portfolio() {
-    //const [itchioGames, setItchioGames] = useState([]);
     const [tabValue, setTabValue] = useState('mvp');
     const [projectDialog, setProjectDialog] = useState(null);
     const { repos, loading, error } = useGithubRepos('Yushikuni');  // Hook is called
-    const { games, loading: gamesLoading, error: gamesError } = useItchioGames(); // Hook pro naètení her
+    const { games, loading: gamesLoading, error: gamesError } = useItchioGames();
+
 
 
     if (loading || gamesLoading) return <p>Loading...</p>;
@@ -42,7 +42,7 @@ function Portfolio() {
                 <Grid item xs={12}>
                     <Grid container spacing={3}>
                         {tabValue === 'mvp' && games.map((game) => (
-                            <Grid item xs={12} sm={6} md={4} key={game.id}>
+                            <Grid item xs={12} sm={6} md={4} key={game.id || game.title}>
                                 <Grow in timeout={1000}>
                                     <Card className='customCard' onClick={() => setProjectDialog(game)}>
                                         <CardActionArea>
