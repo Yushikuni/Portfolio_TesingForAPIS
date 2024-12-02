@@ -9,6 +9,7 @@ const useGithubRepos = (username) => {
     useEffect(() => {
         const fetchRepos = async () => {
             try {
+                // url = f"https://api.github.com/search/repositories?q={topics_query}+user:{username}"
                 const response = await fetch(`https://api.github.com/users/${username}/repos`);
                 const data = await response.json();
                 setRepos(data);
