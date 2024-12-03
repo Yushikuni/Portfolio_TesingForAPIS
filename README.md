@@ -15,6 +15,7 @@ Only one thing needs to be finished: content. For content, I need to use APIs ju
 #### How to build:
 REBuild: npm run dev
 
+Right now Itchio api in not working and I work on pictures :D
 
 #### APIs:
 - Github
