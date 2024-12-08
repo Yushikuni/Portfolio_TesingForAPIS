@@ -19,6 +19,8 @@ Right now Itchio api in not working and I work on pictures :D
 4.12 2024:
 
 Still working on apis
+8.12 2024: Workin on APIS for portfolio-website filteration with topic
+
 
 #### APIs:
 - Github

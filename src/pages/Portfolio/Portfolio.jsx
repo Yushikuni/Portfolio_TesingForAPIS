@@ -10,10 +10,16 @@ import useGithubRepos from '../../components/GetData/Projects';
 function Portfolio() {
     const [tabValue, setTabValue] = useState('mvp');
     const [projectDialog, setProjectDialog] = useState(null);
-    const { repos, loading, error } = useGithubRepos('Yushikuni');  // Hook is called
+    const { repos, loading, error } = useGithubRepos('Yushikuni', ["portfolio-website"]);  // Hook is called
    // const { games, loading: gamesLoading, error: gamesError } = useItchioGames();
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error loading data.</p>;
+
+    if (!Array.isArray(repos) || repos.length === 0) {
+        return <p>No repositories found.</p>;
+    }
+
+
     /*
     if (loading || gamesLoading) return <p>Loading...</p>;
     if (error || gamesError) return <p>Error loading data.</p>;
