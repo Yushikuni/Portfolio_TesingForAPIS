@@ -6,32 +6,46 @@ const useGithubRepos = (username, topics) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
-        const fetchRepos = async () => {
+    useEffect(() =>
+    {
+        const fetchRepos = async () =>
+        {
             setLoading(true); // Resetuje stav pøi novém fetchi
             setError(null);  // Resetuje pøípadné pøedchozí chyby
-            try {
+            try
+            {
                 const token = import.meta.env.VITE_GITHUB_TOKEN;
 
                 const topicsQuery = topics?.join("+") || "";
                 const url = `https://api.github.com/search/repositories?q=${topicsQuery}+user:${username}`;
 
-                const response = await fetch(url, {
-                    headers: {
-                        Authorization: `token ${token}`,
+                const response = await fetch(url,
+                    {
+                        headers:
+                        {
+                            Authorization: `token ${token}`,
+                        },
+
                     },
-                });
+                );
                 const data = await response.json();
-                if (response.ok) {
+
+                if (response.ok)
+                {
                     console.log("API response:", data.items);
                     setRepos(Array.isArray(data.items) ? data.items : []);
-                } else {
+                } else
+                {
                     console.log("API error response:", data);
                     throw new Error(data.message || "Failed to fetch repositories");
                 }
-            } catch (err) {
+            }
+            catch (err)
+            {
                 setError(err.message || "Unknown error occurred");
-            } finally {
+            }
+            finally
+            {
                 setLoading(false);
             }
         };

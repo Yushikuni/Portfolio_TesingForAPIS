@@ -10,7 +10,7 @@ import useGithubRepos from '../../components/GetData/Projects';
 function Portfolio() {
     const [tabValue, setTabValue] = useState('mvp');
     const [projectDialog, setProjectDialog] = useState(null);
-    const { repos, loading, error } = useGithubRepos('Yushikuni', ["portfolio-website"]);  // Hook is called
+    const { repos, loading, error } = useGithubRepos('Yushikuni', ["portfolio-website", "unfinished-project"]);  // Hook is called
    // const { games, loading: gamesLoading, error: gamesError } = useItchioGames();
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error loading data.</p>;
