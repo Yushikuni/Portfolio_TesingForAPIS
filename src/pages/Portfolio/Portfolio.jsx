@@ -37,8 +37,8 @@ function Portfolio() {
                         <Tab label="Highlights" value="mvp"
                             className={tabValue === "mvp" ? "customTabs_item active" : "customTabs_item"}
                         />
-                        {[...new Set(repos.map((item) => item.language))].map((language, index) => (
-                            <Tab key={index} label={language} value={language}
+                        {[...new Set(repos.map((item) => item.language))].map((language) => (
+                            <Tab key={language} label={language} value={language}
                                 className={tabValue === language ? "customTabs_item active" : "customTabs_item"}
                             />
                         ))}
