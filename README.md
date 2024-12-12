@@ -25,6 +25,7 @@ Still working on apis
 
 11.12:
 Working on pictures using Github API
+12.12: still working on problem
 
 
 #### APIs:
