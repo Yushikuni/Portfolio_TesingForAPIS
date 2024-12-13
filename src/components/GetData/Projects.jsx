@@ -39,6 +39,7 @@ const useGithubRepos = (username, topics) => {
                 {
                     console.log("API response:", data.items);
                     setRepos(Array.isArray(data.items) ? data.items : []);
+                    // add pictures from repo
                 } else
                 {
                     console.log("API error response:", data);
