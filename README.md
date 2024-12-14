@@ -26,6 +26,7 @@ Still working on apis
 11.12:
 Working on pictures using Github API
 12.12: still working on problem
+14.12: Need to update a pictures to repo, I will not fetch them from readme.d
 
 
 #### APIs:
