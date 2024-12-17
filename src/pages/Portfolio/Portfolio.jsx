@@ -6,6 +6,7 @@ import './Portfolio.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import useGithubRepos from '../../components/GetData/Projects';
+import defaultPic from '../../assets/images/defaultImage.png'
 //import useItchioGames from '../../components/GetData/PublishedGames';
 function Portfolio() {
     const [tabValue, setTabValue] = useState('mvp');
@@ -75,7 +76,7 @@ function Portfolio() {
                                                 <CardActionArea>
                                                     <CardMedia
                                                         className='customCard_image'
-                                                        image={'/path/to/default/image.jpg'}  // Pokud nemáš image, použij výchozí obrázek
+                                                        image={defaultPic}  // Pokud nemáš image, použij výchozí obrázek
                                                         title={repo.name}
                                                     />
                                                     <CardContent>
