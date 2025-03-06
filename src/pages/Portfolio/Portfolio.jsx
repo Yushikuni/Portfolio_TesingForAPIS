@@ -111,7 +111,8 @@ function Portfolio() {
                         </DialogContent>
                         <DialogActions className='projectDialog_actions'>
                             <a href={projectDialog?.html_url} target='_blank' rel='noopener noreferrer' className='projectDialog_icon'>
-                                View on GitHub
+                                <a href={`https://github.com/${username}/${projectName}`} target="_blank" rel="noopener noreferrer">View Code</a>
+
                             </a>
                             {projectDialog?.links?.map(link => (
                                 <a key={link } href={link.link} className='projectDialog_icon'>{link.icon}</a>
