@@ -28,6 +28,10 @@ Working on pictures using Github API
 12.12: still working on problem
 14.12: Need to update a pictures to repo, I will not fetch them from readme.md
 
+20.2 2025:
+Working on pictures from github API
+Now reading MVP from file resumeData.jsx
+
 
 #### APIs:
 - Github

@@ -6,11 +6,15 @@ import './Portfolio.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import useGithubRepos from '../../components/GetData/Projects';
-import defaultPic from '../../assets/images/defaultImage.png'
+import defaultPic from '../../assets/images/defaultImage.png';
+import resumeData from '../../utils/resumeData';
+import ImageGallery from '../../components/ImageGallery/ImageGallery';
 //import useItchioGames from '../../components/GetData/PublishedGames';
 function Portfolio() {
     const [tabValue, setTabValue] = useState('mvp');
     const [projectDialog, setProjectDialog] = useState(null);
+
+
     const { repos, loading, error } = useGithubRepos('Yushikuni', ["portfolio-website", "finished-project"]);  // Hook is called
    // const { games, loading: gamesLoading, error: gamesError } = useItchioGames();
     if (loading) return <p>Loading...</p>;
@@ -19,12 +23,10 @@ function Portfolio() {
     if (!Array.isArray(repos) || repos.length === 0) {
         return <p>No repositories found.</p>;
     }
+    if (!resumeData?.projects) {
+        return <p>No projects found.</p>;
+    }
 
-
-    /*
-    if (loading || gamesLoading) return <p>Loading...</p>;
-    if (error || gamesError) return <p>Error loading data.</p>;
-    */
     return (
         <div className='portfolio_main_content'>
             <Grid container className="section pb_45">
@@ -35,9 +37,12 @@ function Portfolio() {
                 {/* TABS */}
                 <Grid item xs={12}>
                     <Tabs value={tabValue} indicatorColor="white" className="customTabs" onChange={(event, newValue) => setTabValue(newValue)}>
+                       
                         <Tab label="Highlights" value="mvp"
                             className={tabValue === "mvp" ? "customTabs_item active" : "customTabs_item"}
                         />
+
+
                         {[...new Set(repos.map((item) => item.language))].map((language) => (
                             <Tab key={language} label={language} value={language}
                                 className={tabValue === language ? "customTabs_item active" : "customTabs_item"}
@@ -48,25 +53,25 @@ function Portfolio() {
                 {/* Projekty */}
                 <Grid item xs={12}>
                     <Grid container spacing={3}>
-                        {/* {tabValue === 'mvp' && games.map((game) => (
-                            <Grid item xs={12} sm={6} md={4} key={game.id || game.title}>
-                                <Grow in timeout={1000}>
-                                    <Card className='customCard' onClick={() => setProjectDialog(game)}>
-                                        <CardActionArea>
-                                            <CardMedia
-                                                className='customCard_image'
-                                                image={repos.cover_url || '/path/to/default/image.jpg'}
-                                                title={repos.title}
-                                            />
-                                            <CardContent>
-                                                <Typography variant={'body2'} className='customCard_title'>{repos.title}</Typography>
-                                                <Typography variant="caption" className='customCard_caption'>{repos.short_text}</Typography>
-                                            </CardContent>
-                                        </CardActionArea>
-                                    </Card>
-                                </Grow>
-                            </Grid>
-                        ))}*/}
+                        {resumeData.projects && Array.isArray(resumeData.projects) && resumeData.projects.map((project) => (
+                            <>
+                                {tabValue === 'mvp' ? (
+                                    <Grid item xs={12} sm={6} md={4}>
+                                        <Grow in timeout={1000}>
+                                            <Card className='customCard' onClick={() => setProjectDialog(project)}>
+                                                <CardActionArea>
+                                                    <CardMedia className='customCard_image' image={project.images[0]} title={project.title} />
+                                                    <CardContent>
+                                                        <Typography variant={'body2'} className='customCard_title'>{project.title}</Typography>
+                                                        <Typography variant="caption" className='customCard_caption'>{project.caption}</Typography>
+                                                    </CardContent>
+                                                </CardActionArea>
+                                            </Card>
+                                        </Grow>
+                                    </Grid>
+                                ) : null}
+                            </>
+                        ))}
                         {repos.map((repo) => (
                             <>
                                 {tabValue === repo.language ? (
@@ -76,7 +81,7 @@ function Portfolio() {
                                                 <CardActionArea>
                                                     <CardMedia
                                                         className='customCard_image'
-                                                        image={defaultPic}  // Pokud nemáš image, použij výchozí obrázek
+                                                        image={repo.image||defaultPic}  // Pokud nemáš image, použij výchozí obrázek
                                                         title={repo.name}
                                                     />
                                                     <CardContent>
@@ -100,12 +105,17 @@ function Portfolio() {
                     <>
                         <DialogTitle onClose={() => setProjectDialog(null)}>{projectDialog.name}</DialogTitle>
                         <DialogContent style={{ height: "80vh" }}>
+                            {projectDialog.images && (<ImageGallery images={projectDialog.images} />)}
                             <Typography className='projectDialog_description'>{projectDialog.description}</Typography>
+                            
                         </DialogContent>
                         <DialogActions className='projectDialog_actions'>
-                            <a href={projectDialog.html_url} target='_blank' rel='noopener noreferrer' className='projectDialog_icon'>
+                            <a href={projectDialog?.html_url} target='_blank' rel='noopener noreferrer' className='projectDialog_icon'>
                                 View on GitHub
                             </a>
+                            {projectDialog?.links?.map(link => (
+                                <a key={link } href={link.link} className='projectDialog_icon'>{link.icon}</a>
+                            ))}
                         </DialogActions>
                     </>
                 )}
