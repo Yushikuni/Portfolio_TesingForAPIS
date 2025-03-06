@@ -13,7 +13,7 @@ const useItchioGames = () => {
                         mode: 'no-cors'
                     });
                 if (!response.ok) {
-                    console.error('Response:', response); // Debug
+                    console.error('Response:', response);
                     throw new Error(`Failed to fetch data: ${response.statusText}`);
                 }
                 const data = await response.json();
@@ -26,9 +26,9 @@ const useItchioGames = () => {
         };
 
         fetchData();
-    }, []); // Závislosti prázdné -> zavolá se pouze jednou pøi montování
+    }, []); 
 
-    return { games, loading, error }; // Vrátí stav
+    return { games, loading, error }; 
 };
 
 export default useItchioGames;

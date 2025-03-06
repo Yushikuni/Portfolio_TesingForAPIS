@@ -1,4 +1,3 @@
-// src/hooks/useGithubRepos.js
 import { useState, useEffect, useRef } from 'react';
 
 const useGithubRepos = (username, topics) => {
