@@ -32,6 +32,8 @@ Working on pictures using Github API
 Working on pictures from github API
 Now reading MVP from file resumeData.jsx
 
+06.04 2025:
+Add new texts for resume page. Add my internship to work expirience and add two new certificate obtainded in last year
 
 #### APIs:
 - Github

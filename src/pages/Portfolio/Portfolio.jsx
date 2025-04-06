@@ -9,14 +9,14 @@ import useGithubRepos from '../../components/GetData/Projects';
 import defaultPic from '../../assets/images/defaultImage.png';
 import resumeData from '../../utils/resumeData';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
-import useItchioGames from '../../components/GetData/PublishedGames';
+//import useItchioGames from '../../components/GetData/PublishedGames';
 function Portfolio() {
     const [tabValue, setTabValue] = useState('mvp');
     const [projectDialog, setProjectDialog] = useState(null);
 
 
     const { repos, loading, error } = useGithubRepos('Yushikuni', ["portfolio-website", "finished-project"]);  // Hook is called
-    const { games, loading: gamesLoading, error: gamesError } = useItchioGames();
+    //const { games, loading: gamesLoading, error: gamesError } = useItchioGames();
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error loading data.</p>;
 
@@ -53,14 +53,34 @@ function Portfolio() {
                 {/* Projekty */}
                 <Grid item xs={12}>
                     <Grid container spacing={3}>
-                        {games.length > 0 ? (
+                        {resumeData.projects.map((project) => (
+                            <>
+                                {tabValue === 'mvp' ? (
+                                    <Grid item xs={12} sm={6} md={4}>
+                                        <Grow in timeout={1000}>
+                                            <Card className='customCard' onClick={() => setProjectDialog(project)}>
+                                                <CardActionArea>
+                                                    <CardMedia className='customCard_image' image={project.images[0]} title={project.title} />
+                                                    <CardContent>
+                                                        <Typography variant={'body2'} className='customCard_title'>{project.title}</Typography>
+                                                        <Typography variant="caption" className='customCard_caption'>{project.caption}</Typography>
+                                                    </CardContent>
+                                                </CardActionArea>
+                                            </Card>
+                                        </Grow>
+                                    </Grid>
+                                ) : null}
+                            </>
+                        ))}
+                        {/*<Grid container spacing={3}>
+                    {/*    {games.length > 0 ? (
                             games.map((game) => (
                                 tabValue === 'mvp' ? (
                                     <Grid item xs={12} sm={6} md={4} key={game.id}>
                                         <Grow in timeout={1000}>
-                                            <Card className='customCard' onClick={() => setProjectDialog(game)}>
+                                           <Card className='customCard' onClick={() => setProjectDialog(game)}>
                                                 <CardActionArea>
-                                                    {/* Obrázek je získán z Itch.io API */}
+                                                    {/* Obrázek je získán z Itch.io API */}{/*
                                                     <CardMedia
                                                         className='customCard_image'
                                                         image={game.cover_url} // Používáme obrázek z Itch.io API
@@ -71,15 +91,15 @@ function Portfolio() {
                                                             {game.title}
                                                         </Typography>
                                                         <Typography variant="caption" className='customCard_caption'>
-                                                            {game.short_text || 'No description available'} {/* Možná nahradit s jinou popisnou hodnotou */}
+                                                            {game.short_text || 'No description available'} {/* Možná nahradit s jinou popisnou hodnotou */}{/*
                                                         </Typography>
                                                     </CardContent>
                                                 </CardActionArea>
-                                            </Card>
+                                           </Card>
                                         </Grow>
                                     </Grid>
-                                    ) : null
-                            ))) : (<div> No games available</div>)}
+                                  ) : null
+                            ))) : (<div> No games available</div>)}*/}
                         {repos.map((repo) => (
                             <>
                                 {tabValue === repo.language ? (
@@ -118,13 +138,27 @@ function Portfolio() {
                             
                         </DialogContent>
                         <DialogActions className='projectDialog_actions'>
+                            {projectDialog?.html_url && (
+                                <a href={projectDialog.html_url} target='_blank' rel='noopener noreferrer' className='projectDialog_icon'>
+                                    Project Page
+                                </a>
+                            )}
+                            {projectDialog?.name && projectDialog?.owner?.login && (
+                                <a href={`https://github.com/${projectDialog.owner.login}/${projectDialog.name}`} target="_blank" rel="noopener noreferrer">
+                                    View Code
+                                </a>
+                            )}
+                            {projectDialog?.links?.map(link => (
+                                <a key={link.link} href={link.link} className='projectDialog_icon'>{link.icon}</a>
+                            ))}
+                            {/*
                             <a href={projectDialog?.html_url} target='_blank' rel='noopener noreferrer' className='projectDialog_icon'>
-                                <a href={`https://github.com/${username}/${projectName}`} target="_blank" rel="noopener noreferrer">View Code</a>
+                                <a href={`https://github.com/${projectDialog?.owner?.login}/${projectDialog?.name || 'default-repo'}`} target="_blank" rel="noopener noreferrer">View Code</a>
 
                             </a>
                             {projectDialog?.links?.map(link => (
-                                <a key={link } href={link.link} className='projectDialog_icon'>{link.icon}</a>
-                            ))}
+                                <a key={link} href={link.link} className='projectDialog_icon'>{link.icon}</a>
+                            ))}*/}
                         </DialogActions>
                     </>
                 )}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Typography } from '@mui/material';
 
 import resumeData from '../../utils/resumeData';
@@ -17,11 +17,11 @@ const Footer = ()=> {
                 <Typography className="footer_copyrights">
                     Designed and developed by © <a href="/" target='_blank'>Květuše Husáková</a>
                     <br/>
-                    Inspired by <a href="https://dev.epicgames.com/community/" target="_blank" rel="noreferrer" >EpicGames</a>.<br/>
+                    Inspired by <a href="https://dev.epicgames.com/community/" target="_blank" rel="noreferrer">EpicGames</a>.<br/>
                  </Typography>
             </div>
         </div>
     );
 };
 
-export default Footer
+export default Footer;
