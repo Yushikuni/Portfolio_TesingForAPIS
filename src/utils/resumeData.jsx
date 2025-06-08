@@ -45,7 +45,7 @@ export default {
     expiriences: [
         {
             title: 'Game Developer • Neronian Studios',
-            date: '01/2025 — 03/2025',
+            date: '01/2025 — today',
             description: 'Making gameplay mechanic, programming UI in Unreal Engine 5.3 (Blueprints and C++ 17)',
         },
         {
